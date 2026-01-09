@@ -13,4 +13,5 @@ return {
     'ibhagwan/fzf-lua', -- optional
     'echasnovski/mini.pick', -- optional
   },
+  vim.keymap.set('n', '<leader>gf', '<cmd>Neogit kind=floating<CR>'),
 }
