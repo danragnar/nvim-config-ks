@@ -13,5 +13,8 @@ return {
     'ibhagwan/fzf-lua', -- optional
     'echasnovski/mini.pick', -- optional
   },
-  vim.keymap.set('n', '<leader>gf', '<cmd>Neogit kind=floating<CR>'),
+  -- vim.keymap.set('n', '<leader>gf', '<cmd>Neogit kind=floating<CR>'),
+  vim.keymap.set('n', '<Leader>gf', function()
+    require('neogit').open { cwd = vim.fn.expand '%:p:h' }
+  end),
 }
