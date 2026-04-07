@@ -941,6 +941,7 @@ require('lazy').setup({
   require 'custom.plugins.k8s',
   require 'custom.plugins.kubectl',
   require 'custom.plugins.opencode',
+  require 'custom.plugins.keymaps',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
