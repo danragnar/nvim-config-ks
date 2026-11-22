@@ -17,7 +17,7 @@ return {
   {
     'iamcco/markdown-preview.nvim',
     cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
-    build = 'cd app && yarn install',
+    build = vim.fn.executable 'yarn' == 1 and 'cd app && yarn install' or 'cd app && npx --yes yarn@1 install',
     init = function()
       vim.g.mkdp_filetypes = { 'markdown' }
     end,
