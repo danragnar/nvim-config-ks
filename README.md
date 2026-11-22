@@ -105,6 +105,10 @@ nvim
 That's it! Lazy will install all the plugins you have. Use `:Lazy` to view
 the current plugin status. Hit `q` to close the window.
 
+On Omarchy, Neovim reads the active system theme when it starts. Open a new
+Neovim session after switching system themes. Rose Pine is the fallback if
+there is no usable Omarchy colorscheme.
+
 #### Read The Friendly Documentation
 
 Read through the `init.lua` file in your configuration folder for more
