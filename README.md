@@ -24,6 +24,10 @@ If you are experiencing issues, please make sure you have the latest versions.
 External Requirements:
 - Basic utils: `git`, `make`, `unzip`, C Compiler (`gcc`)
 - [ripgrep](https://github.com/BurntSushi/ripgrep#installation)
+- For browser-based Markdown previews, install [Node.js with npm](https://nodejs.org/en/download)
+  before starting Neovim. If `yarn` is missing, the plugin build uses `npx` to fetch and run
+  Yarn Classic automatically. If the build already failed, restart Neovim after installing
+  Node.js and run `:Lazy build markdown-preview.nvim`.
 - Clipboard tool (xclip/xsel/win32yank or other depending on the platform)
 - A [Nerd Font](https://www.nerdfonts.com/): optional, provides various icons
   - if you have it set `vim.g.have_nerd_font` in `init.lua` to true
@@ -114,6 +118,15 @@ examples of adding popularly requested plugins.
 > [!NOTE]
 > For more information about a particular plugin check its repository's documentation.
 
+### Compatibility tests
+
+GitHub Actions runs a clean Linux install on the latest stable and nightly Neovim for pull requests,
+pushes to `main`, and weekly. Each run uses the latest Node.js LTS and Tree-sitter CLI and installs
+plugins from the versions selected by the config. The smoke tests check startup, Telescope's native
+sorter, Lua LSP registration, and Markdown parsing and preview without Yarn on `PATH`.
+
+Run `bash tests/smoke.sh` locally with Neovim, Node.js with npm, the Tree-sitter CLI, and the system
+dependencies above. The script also uses `curl` to check the local preview server.
 
 ### Getting Started
 
